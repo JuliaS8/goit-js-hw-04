@@ -8,7 +8,13 @@
 //загальну кількість товарів в об’єкті products і повернути true, якщо вона менше або дорівнює containerSize,
 //і false, якщо ні.
 
-function isEnoughCapacity(products, containerSize) {}
+function isEnoughCapacity(products, containerSize) {
+  let totalItems = 0;
+  for (const key in products) {
+    totalItems += products[key];
+  }
+  return totalItems <= containerSize;
+}
 
 console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)); // true
 
